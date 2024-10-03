@@ -231,7 +231,6 @@ class ProductList(QWidget):
 
         layout = QVBoxLayout()
 
-        # Arama alanı
         search_layout = QHBoxLayout()
         self.search_input = QLineEdit(self)
         self.search_input.setPlaceholderText('Ürün ara...')
@@ -239,20 +238,17 @@ class ProductList(QWidget):
         search_layout.addWidget(self.search_input)
         layout.addLayout(search_layout)
 
-        # Ürün tablosu
         self.product_table = QTableWidget(self)
         self.product_table.setColumnCount(5)
         self.product_table.setHorizontalHeaderLabels(['Barkod', 'Ürün Adı', 'Alış Fiyatı', 'Satış Fiyatı', ''])
         self.product_table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.product_table.setEditTriggers(QAbstractItemView.DoubleClicked)
         
-        # Başlık satırının arka plan rengini gri yap
         header = self.product_table.horizontalHeader()
         header.setStyleSheet("QHeaderView::section { background-color: lightgray }")
         
         layout.addWidget(self.product_table)
 
-        # Butonlar
         button_layout = QHBoxLayout()
         
         self.save_button = QPushButton('Değişiklikleri Kaydet', self)
@@ -378,10 +374,9 @@ class ProductList(QWidget):
         for barcode, product in self.products.items():
             ws.append([str(barcode), product['name'], product['buy_price'], product['sell_price']])
 
-        # Hücreleri ortala ve sütun genişliklerini ayarla
         for col in ws.columns:
             max_length = 0
-            column = col[0].column_letter  # Sütun harfini al
+            column = col[0].column_letter
             for cell in col:
                 try:
                     if len(str(cell.value)) > max_length:
@@ -389,8 +384,8 @@ class ProductList(QWidget):
                 except:
                     pass
                 cell.alignment = Alignment(horizontal='center', vertical='center')
-                if column == 'A':  # Barkod sütunu
-                    cell.number_format = '@'  # Metin formatı
+                if column == 'A':
+                    cell.number_format = '@'
             adjusted_width = (max_length + 2)
             ws.column_dimensions[column].width = adjusted_width
 
@@ -399,10 +394,8 @@ class ProductList(QWidget):
 
     def update_or_add_product(self, barcode, product_data):
         if barcode in self.products:
-            # Eğer ürün zaten varsa, önce onu sil
             del self.products[barcode]
         
-        # Yeni ürünü ekle
         self.products[barcode] = {
             'name': product_data['name'],
             'buy_price': float(product_data['buy_price']),
@@ -564,8 +557,7 @@ class BarcodeReader(QMainWindow):
         QShortcut(QKeySequence("F9"), self, self.clear_cart)
         QShortcut(QKeySequence("F5"), self, self.change_quantity)
 
-        # Otomatik odaklanma
-        self.barcode_input.setFocus()  # Burada odaklanmayı ayarlıyoruz.
+        self.barcode_input.setFocus()
 
     
     def add_to_cart(self):
