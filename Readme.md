@@ -11,14 +11,14 @@
 | Kayıt Olma                                                     |     ✅     |
 | Sepet kontrolü (Ürün ekleme, çıkarma, adet değiştirme)         |     ✅     |
 | Geçmiş siparişleri görüntüleme                                 |     ✅     |
-| Ürün Fiyatı Güncelleme                                         |     🔜     |
-| Ürün Stoğu Düzenleme                                           |     🔜     |
+| Ürün Fiyatı Güncelleme                                         |     ✅     |
+| Ürün Listesi Dışarı Aktarma                                    |     ✅     |
+| Ürün Listesi İçeri Aktarma                                     |     ✅     |
 | Net Kâr ve Ciro Hesaplama                                      |     🔜     |
+| Ürün Stoğu Düzenleme                                           |     🔜     |
 | Veresiye defteri                                               |     🔜     |
 | Ürünleri Bulut Yedeği Alma                                     |     🔜     |
 | Görsel Güzelleştirmeler/Animasyon Efektleri                    |     🔜     |
-| Ürün Listesi Dışarı Aktarma                                    |     🔜     |
-| Ürün Listesi İçeri Aktarma                                     |     🔜     |
 | Otomatik Bulut Yedeği                                          |     🔜     |
 | Verileri Bulut Yedeğinden Geri Yükleme                         |     🔜     |
 
