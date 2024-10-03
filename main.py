@@ -10,7 +10,7 @@ import pickle
 import os
 from PyQt5.QtWidgets import QFileDialog, QDialog, QLabel, QApplication, QTreeWidget, QTreeWidgetItem, QShortcut, QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QPushButton, QCheckBox, QLabel, QMessageBox, QMainWindow, QTableWidget, QTableWidgetItem, QHeaderView, QAbstractItemView, QInputDialog
 from PyQt5.QtCore import Qt, QSize
-from PyQt5.QtGui import QKeySequence, QFont
+from PyQt5.QtGui import QKeySequence, QFont, QIcon
 
 def is_valid_password(password):
     if ' ' in password or any(ord(char) > 127 for char in password):
@@ -25,6 +25,7 @@ class LoginForm(QWidget):
 
     def initUI(self):
         self.setWindowTitle('Giriş Formu')
+        self.setWindowIcon(QIcon('data/icon.png'))
         self.setGeometry(300, 300, 300, 200)
 
         layout = QVBoxLayout()
@@ -119,6 +120,7 @@ class RegisterForm(QWidget):
 
     def initUI(self):
         self.setWindowTitle('Kayıt Formu')
+        self.setWindowIcon(QIcon('data/icon.png'))
         self.setGeometry(400, 300, 300, 300)
 
         layout = QVBoxLayout()
@@ -193,6 +195,7 @@ class MainMenu(QWidget):
 
     def initUI(self):
         self.setWindowTitle('Ana Menü')
+        self.setWindowIcon(QIcon('data/icon.png'))
         self.setGeometry(300, 300, 300, 250)
 
         layout = QVBoxLayout()
@@ -227,6 +230,7 @@ class ProductList(QWidget):
 
     def initUI(self):
         self.setWindowTitle('Ürün Listesi')
+        self.setWindowIcon(QIcon('data/icon.png'))
         self.showFullScreen()
 
         layout = QVBoxLayout()
@@ -462,6 +466,7 @@ class ExportDialog(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setWindowTitle('Dışarı Aktarma Türü')
+        self.setWindowIcon(QIcon('data/icon.png'))
         self.setGeometry(300, 300, 250, 100)
 
         layout = QVBoxLayout()
@@ -497,6 +502,7 @@ class BarcodeReader(QMainWindow):
 
     def initUI(self):
         self.setWindowTitle('Barkod Okuyucu')
+        self.setWindowIcon(QIcon('data/icon.png'))
         self.showFullScreen()
 
         central_widget = QWidget()
@@ -692,6 +698,7 @@ class AddProductForm(QWidget):
 
     def initUI(self):
         self.setWindowTitle('Ürün Ekle')
+        self.setWindowIcon(QIcon('data/icon.png'))
         self.setGeometry(400, 300, 300, 200)
 
         layout = QVBoxLayout()
